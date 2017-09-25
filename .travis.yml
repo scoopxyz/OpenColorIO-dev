@@ -9,7 +9,6 @@ compiler:
 
 os:
   - linux
-  - osx
 
 env:
   - OPTIONS="-DCMAKE_BUILD_TYPE=Release -DOCIO_BUILD_TESTS=yes -DOCIO_BUILD_DOCS=yes"
