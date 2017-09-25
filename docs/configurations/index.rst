@@ -30,5 +30,6 @@ Config Creation
 
 .. toctree::
     :maxdepth: 1
-
+    
+    spi_pipeline
     allocation_vars
