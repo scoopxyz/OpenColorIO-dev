@@ -1,0 +1,26 @@
+# travis-ci.org build file
+# https://docs.travis-ci.com/user/languages/cpp
+
+language: cpp
+
+compiler:
+  - clang
+  - gcc
+
+os:
+  - linux
+  - osx
+
+env:
+  - OPTIONS="-DCMAKE_BUILD_TYPE=Release -DOCIO_BUILD_TESTS=yes"
+
+# Run the Build script
+script:
+ - mkdir _build
+ - cd _build
+ - cmake .. -DCMAKE_INSTALL_PREFIX=../_install $OPTIONS
+ - cmake --build . --target install
+
+# Run Tests
+after_script:
+ - ctest --output-on-failure .
